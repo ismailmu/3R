@@ -1,5 +1,5 @@
 # 3R
-enterprice report
+enterprice reporting
 
 Prerequisite : 
 
@@ -20,10 +20,12 @@ running :
 	
 	windows :
 		
-		run_export_slik.bat 		--> menjalankan untuk bulan kemarin
+		run_export_slik.bat 			--> menjalankan untuk bulan kemarin
 		
-		run_export_slik.bat 2017-12-31 	--> menjalankan untuk spesifik tanggal 2017-12-31
+		run_export_slik.bat 2017-12-31	--> menjalankan untuk spesifik tanggal 2017-12-31
 	
 	linux :
 		
-		under development, menunggu uji di ubuntu
+		./run_export_slik.sh 			--> menjalankan untuk bulan kemarin
+		
+		./run_export_slik.sh 2017-12-31	--> menjalankan untuk spesifik tanggal 2017-12-31

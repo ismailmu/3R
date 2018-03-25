@@ -7,7 +7,8 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 REM INIT
 
 SET "PENTAHO_PATH=C:\12023227\Tools\Program\pdi-ce-8.0.0.0-28\data-integration"
-SET "LOG_PATH=C:\12023227\Tools\Program\3R\PROGRAM\pdi\export\LOG"
+SET "LOG_PATH=C:\12023227\Tools\Program\3R\PROGRAM\pdi\export\logs"
+
 SET "full_wmic=C:\Windows\System32\wbem\WMIC.EXE"
 
 REM INIT DATE

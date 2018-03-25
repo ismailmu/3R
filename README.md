@@ -9,6 +9,7 @@ Prerequisite :
 
 3.mysql 5.7
 
+
 folder :
 
 **1.export_slik**
@@ -21,7 +22,7 @@ running :
 		
 		run_export_slik.bat 		--> menjalankan untuk bulan kemarin
 		
-		run_export_slik.bat 2017-12-31 	--> menjalankan untuk spesifik tanggal 2017-12
+		run_export_slik.bat 2017-12-31 	--> menjalankan untuk spesifik tanggal 2017-12-31
 	
 	linux :
 		

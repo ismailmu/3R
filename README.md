@@ -3,7 +3,11 @@ enterprice report
 
 Prerequisite : 
 
-1.Pentaho pdi-ce-8.0.0.0-28
+1.Java JDK 1.8
+
+2.Pentaho pdi-ce-8.0.0.0-28
+
+3.mysql 5.7
 
 folder :
 
@@ -21,4 +25,4 @@ running :
 	
 	linux :
 		
-		under development, menunggu install vmware redhat, dan di uji di lingkungan tersebut
+		under development, menunggu uji di ubuntu

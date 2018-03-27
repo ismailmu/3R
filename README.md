@@ -29,3 +29,11 @@ running :
 		./run_export_slik.sh 			--> menjalankan untuk bulan kemarin
 		
 		./run_export_slik.sh 2017-12-31	--> menjalankan untuk spesifik tanggal 2017-12-31
+
+**2.export_lb**
+
+Under development
+
+**3.db**
+
+Berisi 1 file dm_reporting.sql, untuk restore database

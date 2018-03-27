@@ -15,9 +15,311 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+--
+-- Table structure for table `rpt_lb`
+--
+
 CREATE DATABASE IF NOT EXISTS `dm_reporting`;
 
-USE dm_reporting;
+USE `dm_reporting`;
+
+DROP TABLE IF EXISTS `rpt_lb`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rpt_lb` (
+  `export_to` varchar(255) NOT NULL DEFAULT '',
+  `kd_jns_pelapor` varchar(45) NOT NULL DEFAULT '',
+  `kd_pelapor` varchar(45) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rpt_lb`
+--
+
+LOCK TABLES `rpt_lb` WRITE;
+/*!40000 ALTER TABLE `rpt_lb` DISABLE KEYS */;
+INSERT INTO `rpt_lb` VALUES ('C:\\12023227\\Tools\\Program\\3R\\PROGRAM\\pdi\\hasil_export_lb','0103','601306');
+/*!40000 ALTER TABLE `rpt_lb` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rpt_lb_form00`
+--
+
+DROP TABLE IF EXISTS `rpt_lb_form00`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rpt_lb_form00` (
+  `dt_populate` datetime DEFAULT NULL,
+  `src_system` varchar(50) DEFAULT NULL,
+  `user_generate` varchar(100) DEFAULT NULL,
+  `dt_data` date NOT NULL,
+  `sandi_bank` char(9) NOT NULL,
+  `nm_bank` varchar(255) NOT NULL,
+  `ket_alamat` varchar(255) NOT NULL,
+  `ket_kecamatan` varchar(255) NOT NULL,
+  `ket_kelurahan` varchar(255) NOT NULL,
+  `kd_dati` char(4) NOT NULL,
+  `no_kodepos` varchar(255) NOT NULL,
+  `status_pemilikan_gdg` varchar(255) NOT NULL,
+  `kd_cabang` varchar(255) NOT NULL,
+  `kd_cabang_wil` varchar(255) NOT NULL,
+  `kepemilikan` varchar(255) DEFAULT NULL,
+  `jml_pemegang_saham` smallint(6) NOT NULL,
+  `nm_direktur` varchar(255) NOT NULL,
+  `jml_direktur` smallint(6) NOT NULL,
+  `nm_komisaris` varchar(255) NOT NULL,
+  `jml_komisaris` smallint(6) NOT NULL,
+  `pendidikan_komisaris` varchar(255) NOT NULL,
+  `nm_pimpinan` varchar(255) DEFAULT NULL,
+  `jml_karyawan` smallint(6) DEFAULT NULL,
+  `no_telepon` varchar(255) NOT NULL,
+  `no_fax` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `nm_penanggung` varchar(255) NOT NULL,
+  `divisi_penanggung` varchar(255) NOT NULL,
+  `no_telepon_penanggung` varchar(255) NOT NULL,
+  `no_fax_penanggung` varchar(255) NOT NULL,
+  `pva` varchar(5) NOT NULL,
+  `jml_cabang` int(11) NOT NULL,
+  `jml_kantor_kas` int(11) NOT NULL,
+  `jml_kas_mobil` int(11) NOT NULL,
+  `jml_atm` int(11) NOT NULL,
+  `deviden_dibayar` int(11) NOT NULL,
+  `bonus_tahunan` int(11) NOT NULL,
+  `diaudit_kap` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rpt_lb_form00`
+--
+
+LOCK TABLES `rpt_lb_form00` WRITE;
+/*!40000 ALTER TABLE `rpt_lb_form00` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rpt_lb_form00` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rpt_lb_form01`
+--
+
+DROP TABLE IF EXISTS `rpt_lb_form01`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rpt_lb_form01` (
+  `dt_populate` datetime DEFAULT NULL,
+  `src_system` varchar(50) DEFAULT NULL,
+  `user_generate` varchar(100) DEFAULT NULL,
+  `dt_data` date NOT NULL,
+  `kd_gl` varchar(255) NOT NULL,
+  `nm_gl` varchar(255) NOT NULL,
+  `jml` bigint(20) NOT NULL,
+  `group` smallint(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rpt_lb_form01`
+--
+
+LOCK TABLES `rpt_lb_form01` WRITE;
+/*!40000 ALTER TABLE `rpt_lb_form01` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rpt_lb_form01` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rpt_lb_form02`
+--
+
+DROP TABLE IF EXISTS `rpt_lb_form02`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rpt_lb_form02` (
+  `dt_populate` datetime DEFAULT NULL,
+  `src_system` varchar(50) DEFAULT NULL,
+  `user_generate` varchar(100) DEFAULT NULL,
+  `dt_data` date NOT NULL,
+  `kd_gl` varchar(255) NOT NULL,
+  `nm_gl` varchar(255) NOT NULL,
+  `jml` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rpt_lb_form02`
+--
+
+LOCK TABLES `rpt_lb_form02` WRITE;
+/*!40000 ALTER TABLE `rpt_lb_form02` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rpt_lb_form02` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rpt_lb_form03`
+--
+
+DROP TABLE IF EXISTS `rpt_lb_form03`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rpt_lb_form03` (
+  `dt_populate` datetime DEFAULT NULL,
+  `src_system` varchar(50) DEFAULT NULL,
+  `user_generate` varchar(100) DEFAULT NULL,
+  `dt_data` date NOT NULL,
+  `kd_valas` varchar(255) NOT NULL,
+  `jml_valas` bigint(20) NOT NULL,
+  `jml_tengah` bigint(20) NOT NULL,
+  `jml_rupiah` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rpt_lb_form03`
+--
+
+LOCK TABLES `rpt_lb_form03` WRITE;
+/*!40000 ALTER TABLE `rpt_lb_form03` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rpt_lb_form03` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rpt_lb_form04`
+--
+
+DROP TABLE IF EXISTS `rpt_lb_form04`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rpt_lb_form04` (
+  `dt_populate` datetime DEFAULT NULL,
+  `src_system` varchar(50) DEFAULT NULL,
+  `user_generate` varchar(100) DEFAULT NULL,
+  `dt_data` date NOT NULL,
+  `kd_sbi` char(3) NOT NULL,
+  `kd_klasifikasi` char(1) NOT NULL,
+  `suku_bunga` float DEFAULT NULL,
+  `dt_mulai` date DEFAULT NULL,
+  `dt_jatuh_tempo` date DEFAULT NULL,
+  `jml` bigint(20) DEFAULT NULL,
+  `jml_dijaminkan` bigint(20) DEFAULT NULL,
+  `biaya_perolehan` bigint(20) DEFAULT NULL,
+  `diskonto_belum_amortisasi` bigint(20) DEFAULT NULL,
+  `premium_belum_amortisasi` bigint(20) DEFAULT NULL,
+  `biaya_belum_amortisasi` bigint(20) DEFAULT NULL,
+  `laba_rugi_belum_realisasi` bigint(20) DEFAULT NULL,
+  `biaya_sudah_amortisasi` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rpt_lb_form04`
+--
+
+LOCK TABLES `rpt_lb_form04` WRITE;
+/*!40000 ALTER TABLE `rpt_lb_form04` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rpt_lb_form04` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rpt_lb_form05`
+--
+
+DROP TABLE IF EXISTS `rpt_lb_form05`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rpt_lb_form05` (
+  `dt_populate` datetime DEFAULT NULL,
+  `src_system` varchar(50) DEFAULT NULL,
+  `user_generate` varchar(100) DEFAULT NULL,
+  `dt_data` date NOT NULL,
+  `kd_pelapor` varchar(45) NOT NULL,
+  `kd_sbi` char(3) NOT NULL,
+  `kd_dati` char(4) NOT NULL,
+  `kd_jenis` varchar(3) NOT NULL,
+  `kd_keterkaitan` char(1) NOT NULL,
+  `dt_mulai` date DEFAULT NULL,
+  `dt_jatuh_tempo` date DEFAULT NULL,
+  `kolektibilitas` char(1) NOT NULL,
+  `suku_bunga` float DEFAULT NULL,
+  `jml` bigint(20) DEFAULT NULL,
+  `jml_dijaminkan` bigint(20) DEFAULT NULL,
+  `jml_ppap` bigint(20) DEFAULT NULL,
+  `bunga_penyelesaian` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rpt_lb_form05`
+--
+
+LOCK TABLES `rpt_lb_form05` WRITE;
+/*!40000 ALTER TABLE `rpt_lb_form05` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rpt_lb_form05` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rpt_lb_form06`
+--
+
+DROP TABLE IF EXISTS `rpt_lb_form06`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rpt_lb_form06` (
+  `dt_populate` datetime DEFAULT NULL,
+  `src_system` varchar(50) DEFAULT NULL,
+  `user_generate` varchar(100) DEFAULT NULL,
+  `dt_data` date NOT NULL,
+  `no_rekening` varchar(45) NOT NULL,
+  `jml_rekening` int(11) NOT NULL,
+  `kd_sifat` varchar(2) NOT NULL,
+  `kd_jenis_penggunaan` char(2) NOT NULL,
+  `kd_keterkaitan` char(1) NOT NULL,
+  `kd_sumber_dana` varchar(6) DEFAULT NULL,
+  `periode_pembayaran` char(1) DEFAULT NULL,
+  `dt_mulai` date DEFAULT NULL,
+  `dt_jatuh_tempo` date DEFAULT NULL,
+  `dt_angsuran_pertama` date DEFAULT NULL,
+  `kolektibilitas` char(1) NOT NULL,
+  `dpd` int(11) NOT NULL,
+  `kd_golongan` varchar(6) DEFAULT NULL,
+  `kd_sbi` char(3) NOT NULL,
+  `kd_sektor_ekonomi` varchar(4) NOT NULL,
+  `kd_jenis_usaha` char(1) NOT NULL,
+  `ket_lokasi_usaha` varchar(255) DEFAULT NULL,
+  `suku_bunga` float DEFAULT NULL,
+  `kd_suku_bunga` varchar(3) DEFAULT NULL,
+  `kd_golongan_penjamin` varchar(6) DEFAULT NULL,
+  `persentase_jaminan` float DEFAULT NULL,
+  `kd_liquid` varchar(2) DEFAULT NULL,
+  `jml_liquid` bigint(20) DEFAULT NULL,
+  `kd_non_liquid` varchar(2) DEFAULT NULL,
+  `jml_non_liquid` bigint(20) DEFAULT NULL,
+  `jml_non_liquid_ppap` bigint(20) DEFAULT NULL,
+  `dt_non_liquid_penilaian_akhir` date DEFAULT NULL,
+  `jml_kelonggaran_tarik` bigint(20) DEFAULT NULL,
+  `jml_plafond_akad` bigint(20) DEFAULT NULL,
+  `jml_plafond_efektif` bigint(20) DEFAULT NULL,
+  `jml_baki_debet` bigint(20) DEFAULT NULL,
+  `jml_provisi` bigint(20) DEFAULT NULL,
+  `jml_biaya` bigint(20) DEFAULT NULL,
+  `jml_pendapatan_bunga_ditangguhkan` bigint(20) DEFAULT NULL,
+  `jml_cadangan_kerugian` bigint(20) DEFAULT NULL,
+  `jml_baki_debet_netto` bigint(20) DEFAULT NULL,
+  `jml_ppap` bigint(20) DEFAULT NULL,
+  `jml_kelebihan_ppap` bigint(20) DEFAULT NULL,
+  `jml_pendapatan_bunga_penyelesaian` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rpt_lb_form06`
+--
+
+LOCK TABLES `rpt_lb_form06` WRITE;
+/*!40000 ALTER TABLE `rpt_lb_form06` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rpt_lb_form06` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `rpt_slik`
@@ -40,7 +342,7 @@ CREATE TABLE `rpt_slik` (
 
 LOCK TABLES `rpt_slik` WRITE;
 /*!40000 ALTER TABLE `rpt_slik` DISABLE KEYS */;
-INSERT INTO `rpt_slik` VALUES ('C:\\12023227\\Tools\\Program\\3R\\PROGRAM\\pdi\\hasil_export',500000,'0103','601306');
+INSERT INTO `rpt_slik` VALUES ('C:\\12023227\\Tools\\Program\\3R\\PROGRAM\\pdi\\hasil_export_slik',500000,'0103','601306');
 /*!40000 ALTER TABLE `rpt_slik` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -666,7 +968,7 @@ CREATE TABLE `tmp_row_slik` (
 
 LOCK TABLES `tmp_row_slik` WRITE;
 /*!40000 ALTER TABLE `tmp_row_slik` DISABLE KEYS */;
-INSERT INTO `tmp_row_slik` VALUES (1,0,500000,500000,0,0,'D02'),(1,0,500000,500000,0,0,'K01'),(1,0,500000,500000,0,0,'F01'),(1,0,500000,500000,0,0,'S01'),(1,0,500000,500000,0,0,'F06'),(1,0,500000,500000,0,0,'D01'),(1,0,500000,500000,0,0,'F02'),(1,0,500000,500000,0,0,'A01'),(1,0,500000,500000,0,0,'P01'),(1,0,500000,500000,0,0,'M01');
+INSERT INTO `tmp_row_slik` VALUES (1,0,500000,500000,0,0,'A01'),(1,0,500000,500000,0,0,'D01'),(1,0,500000,500000,0,0,'F02'),(1,0,500000,500000,0,0,'D02'),(1,0,500000,500000,0,0,'F06'),(1,0,500000,500000,0,0,'M01'),(1,0,500000,500000,0,0,'P01'),(1,0,500000,500000,0,0,'S01'),(1,0,500000,500000,0,0,'F01'),(1,0,500000,500000,0,0,'K01');
 /*!40000 ALTER TABLE `tmp_row_slik` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -679,4 +981,31 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-24 22:29:28
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS `dm_reporting`.`gen_slik` $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `gen_slik`(
+  IN segment varchar(45)
+)
+BEGIN
+  SET @v_loop = 0;
+  SET @v_count = (select rec_count from tmp_count_slik where kd_segment = segment);
+  SET @v_max = (select page_count from tmp_count_slik where kd_segment = segment);
+  SET @v_export_limit = (select export_limit from rpt_slik);
+
+  DELETE FROM tmp_row_slik WHERE kd_segmen = segment;
+
+  WHILE @v_loop <= @v_max DO
+    INSERT INTO tmp_row_slik(row_num,row_limit,rec_count,row_page,row_offset,row_final,kd_segmen)
+    SELECT @v_loop + 1 as row_num,@v_export_limit as row_limit,@v_count as rec_count,(@v_loop + 1) * @v_export_limit as row_page, @v_loop * @v_export_limit as row_offset
+      ,CASE WHEN @v_count > ( (@v_loop + 1) * @v_export_limit) THEN @v_export_limit ELSE @v_count - (@v_loop * @v_export_limit) END as row_final,segment as kd_segmen;
+
+    SET @v_loop = @v_loop + 1;
+
+  END WHILE;
+  COMMIT;
+END $$
+
+DELIMITER ;
+
+-- Dump completed on 2018-03-27 23:23:24

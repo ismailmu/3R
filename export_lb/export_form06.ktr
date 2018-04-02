@@ -522,7 +522,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_form00.mdb</filename>
+    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_LBBPR.mdb</filename>
     <table>form_06</table>
     <truncate>Y</truncate>
     <create_file>Y</create_file>
@@ -557,159 +557,120 @@
     <fields>
       <field>
         <name>no_rekening</name>
-        <rename/>
       </field>
       <field>
         <name>jml_rekening</name>
-        <rename/>
       </field>
       <field>
         <name>kd_sifat</name>
-        <rename/>
       </field>
       <field>
         <name>kd_jenis_penggunaan</name>
-        <rename/>
       </field>
       <field>
         <name>kd_keterkaitan</name>
-        <rename/>
       </field>
       <field>
         <name>kd_sumber_dana</name>
-        <rename/>
       </field>
       <field>
         <name>periode_pembayaran</name>
-        <rename/>
       </field>
       <field>
         <name>dt_mulai</name>
-        <rename/>
       </field>
       <field>
         <name>dt_jatuh_tempo</name>
-        <rename/>
       </field>
       <field>
         <name>dt_angsuran_pertama</name>
-        <rename/>
       </field>
       <field>
         <name>kolektibilitas</name>
-        <rename/>
       </field>
       <field>
         <name>dpd</name>
-        <rename/>
       </field>
       <field>
         <name>kd_golongan</name>
-        <rename/>
       </field>
       <field>
         <name>kd_sbi</name>
-        <rename/>
       </field>
       <field>
         <name>kd_sektor_ekonomi</name>
-        <rename/>
       </field>
       <field>
         <name>kd_jenis_usaha</name>
-        <rename/>
       </field>
       <field>
         <name>ket_lokasi_usaha</name>
-        <rename/>
       </field>
       <field>
         <name>suku_bunga</name>
-        <rename/>
       </field>
       <field>
         <name>kd_suku_bunga</name>
-        <rename/>
       </field>
       <field>
         <name>kd_golongan_penjamin</name>
-        <rename/>
       </field>
       <field>
         <name>persentase_jaminan</name>
-        <rename/>
       </field>
       <field>
         <name>kd_liquid</name>
-        <rename/>
       </field>
       <field>
         <name>jml_liquid</name>
-        <rename/>
       </field>
       <field>
         <name>kd_non_liquid</name>
-        <rename/>
       </field>
       <field>
         <name>jml_non_liquid</name>
-        <rename/>
       </field>
       <field>
         <name>jml_non_liquid_ppap</name>
-        <rename/>
       </field>
       <field>
         <name>dt_non_liquid_penilaian_akhir</name>
-        <rename/>
       </field>
       <field>
         <name>jml_kelonggaran_tarik</name>
-        <rename/>
       </field>
       <field>
         <name>jml_plafond_akad</name>
-        <rename/>
       </field>
       <field>
         <name>jml_plafond_efektif</name>
-        <rename/>
       </field>
       <field>
         <name>jml_baki_debet</name>
-        <rename/>
       </field>
       <field>
         <name>jml_provisi</name>
-        <rename/>
       </field>
       <field>
         <name>jml_biaya</name>
-        <rename/>
       </field>
       <field>
         <name>jml_pendapatan_bunga_ditangguhkan</name>
-        <rename/>
       </field>
       <field>
         <name>jml_cadangan_kerugian</name>
-        <rename/>
       </field>
       <field>
         <name>jml_baki_debet_netto</name>
-        <rename/>
       </field>
       <field>
         <name>jml_ppap</name>
-        <rename/>
       </field>
       <field>
         <name>jml_kelebihan_ppap</name>
-        <rename/>
       </field>
       <field>
         <name>jml_pendapatan_bunga_penyelesaian</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

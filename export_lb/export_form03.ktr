@@ -522,7 +522,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_form00.mdb</filename>
+    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_LBBPR.mdb</filename>
     <table>form_03</table>
     <truncate>Y</truncate>
     <create_file>Y</create_file>
@@ -557,19 +557,15 @@
     <fields>
       <field>
         <name>kd_valas</name>
-        <rename/>
       </field>
       <field>
         <name>jml_valas</name>
-        <rename/>
       </field>
       <field>
         <name>jml_tengah</name>
-        <rename/>
       </field>
       <field>
         <name>jml_rupiah</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

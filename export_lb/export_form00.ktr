@@ -521,7 +521,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_form00.mdb</filename>
+    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_LBBPR.mdb</filename>
     <table>form_00</table>
     <truncate>Y</truncate>
     <create_file>Y</create_file>
@@ -546,7 +546,7 @@
     <name>Select values</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -556,105 +556,139 @@
     <fields>
       <field>
         <name>sandi_bank</name>
+        <rename/>
       </field>
       <field>
         <name>nm_bank</name>
+        <rename/>
       </field>
       <field>
         <name>ket_alamat</name>
+        <rename/>
       </field>
       <field>
         <name>ket_kecamatan</name>
+        <rename/>
       </field>
       <field>
         <name>ket_kelurahan</name>
+        <rename/>
       </field>
       <field>
         <name>kd_dati</name>
+        <rename/>
       </field>
       <field>
         <name>no_kodepos</name>
+        <rename/>
       </field>
       <field>
         <name>status_pemilikan_gdg</name>
+        <rename/>
       </field>
       <field>
         <name>kd_cabang</name>
+        <rename/>
       </field>
       <field>
         <name>kd_cabang_wil</name>
+        <rename/>
       </field>
       <field>
         <name>kepemilikan</name>
+        <rename/>
       </field>
       <field>
         <name>jml_pemegang_saham</name>
+        <rename/>
       </field>
       <field>
         <name>nm_direktur</name>
+        <rename/>
       </field>
       <field>
         <name>jml_direktur</name>
+        <rename/>
       </field>
       <field>
         <name>nm_komisaris</name>
+        <rename/>
       </field>
       <field>
         <name>jml_komisaris</name>
+        <rename/>
       </field>
       <field>
         <name>pendidikan_komisaris</name>
+        <rename/>
       </field>
       <field>
         <name>nm_pimpinan</name>
+        <rename/>
       </field>
       <field>
         <name>jml_karyawan</name>
+        <rename/>
       </field>
       <field>
         <name>no_telepon</name>
+        <rename/>
       </field>
       <field>
         <name>no_fax</name>
+        <rename/>
       </field>
       <field>
         <name>email</name>
+        <rename/>
       </field>
       <field>
         <name>nm_penanggung</name>
+        <rename/>
       </field>
       <field>
         <name>divisi_penanggung</name>
+        <rename/>
       </field>
       <field>
         <name>no_telepon_penanggung</name>
+        <rename/>
       </field>
       <field>
         <name>no_fax_penanggung</name>
+        <rename/>
       </field>
       <field>
         <name>pva</name>
+        <rename/>
       </field>
       <field>
         <name>jml_cabang</name>
+        <rename/>
       </field>
       <field>
         <name>jml_kantor_kas</name>
+        <rename/>
       </field>
       <field>
         <name>jml_kas_mobil</name>
+        <rename/>
       </field>
       <field>
         <name>jml_atm</name>
+        <rename/>
       </field>
       <field>
         <name>deviden_dibayar</name>
+        <rename/>
       </field>
       <field>
         <name>bonus_tahunan</name>
+        <rename/>
       </field>
       <field>
         <name>diaudit_kap</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

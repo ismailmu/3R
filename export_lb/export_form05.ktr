@@ -522,7 +522,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_form00.mdb</filename>
+    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_LBBPR.mdb</filename>
     <table>form_05</table>
     <truncate>Y</truncate>
     <create_file>Y</create_file>
@@ -557,55 +557,42 @@
     <fields>
       <field>
         <name>kd_pelapor</name>
-        <rename/>
       </field>
       <field>
         <name>kd_sbi</name>
-        <rename/>
       </field>
       <field>
         <name>kd_dati</name>
-        <rename/>
       </field>
       <field>
         <name>kd_jenis</name>
-        <rename/>
       </field>
       <field>
         <name>kd_keterkaitan</name>
-        <rename/>
       </field>
       <field>
         <name>dt_mulai</name>
-        <rename/>
       </field>
       <field>
         <name>dt_jatuh_tempo</name>
-        <rename/>
       </field>
       <field>
         <name>kolektibilitas</name>
-        <rename/>
       </field>
       <field>
         <name>suku_bunga</name>
-        <rename/>
       </field>
       <field>
         <name>jml</name>
-        <rename/>
       </field>
       <field>
         <name>jml_dijaminkan</name>
-        <rename/>
       </field>
       <field>
         <name>jml_ppap</name>
-        <rename/>
       </field>
       <field>
         <name>bunga_penyelesaian</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>export_form00</name>
+    <name>export_form08</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -521,8 +522,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_form00.mdb</filename>
-    <table>form_00</table>
+    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_LBBPR.mdb</filename>
+    <table>form_08</table>
     <truncate>Y</truncate>
     <create_file>Y</create_file>
     <create_table>Y</create_table>
@@ -555,106 +556,22 @@
     </partitioning>
     <fields>
       <field>
-        <name>sandi_bank</name>
+        <name>kd_jenis</name>
       </field>
       <field>
-        <name>nm_bank</name>
+        <name>kd_sumber_perolehan</name>
       </field>
       <field>
-        <name>ket_alamat</name>
+        <name>jml_biaya_perolehan</name>
       </field>
       <field>
-        <name>ket_kecamatan</name>
+        <name>jml_amortisasi</name>
       </field>
       <field>
-        <name>ket_kelurahan</name>
+        <name>jml_kerugian</name>
       </field>
       <field>
-        <name>kd_dati</name>
-      </field>
-      <field>
-        <name>no_kodepos</name>
-      </field>
-      <field>
-        <name>status_pemilikan_gdg</name>
-      </field>
-      <field>
-        <name>kd_cabang</name>
-      </field>
-      <field>
-        <name>kd_cabang_wil</name>
-      </field>
-      <field>
-        <name>kepemilikan</name>
-      </field>
-      <field>
-        <name>jml_pemegang_saham</name>
-      </field>
-      <field>
-        <name>nm_direktur</name>
-      </field>
-      <field>
-        <name>jml_direktur</name>
-      </field>
-      <field>
-        <name>nm_komisaris</name>
-      </field>
-      <field>
-        <name>jml_komisaris</name>
-      </field>
-      <field>
-        <name>pendidikan_komisaris</name>
-      </field>
-      <field>
-        <name>nm_pimpinan</name>
-      </field>
-      <field>
-        <name>jml_karyawan</name>
-      </field>
-      <field>
-        <name>no_telepon</name>
-      </field>
-      <field>
-        <name>no_fax</name>
-      </field>
-      <field>
-        <name>email</name>
-      </field>
-      <field>
-        <name>nm_penanggung</name>
-      </field>
-      <field>
-        <name>divisi_penanggung</name>
-      </field>
-      <field>
-        <name>no_telepon_penanggung</name>
-      </field>
-      <field>
-        <name>no_fax_penanggung</name>
-      </field>
-      <field>
-        <name>pva</name>
-      </field>
-      <field>
-        <name>jml_cabang</name>
-      </field>
-      <field>
-        <name>jml_kantor_kas</name>
-      </field>
-      <field>
-        <name>jml_kas_mobil</name>
-      </field>
-      <field>
-        <name>jml_atm</name>
-      </field>
-      <field>
-        <name>deviden_dibayar</name>
-      </field>
-      <field>
-        <name>bonus_tahunan</name>
-      </field>
-      <field>
-        <name>diaudit_kap</name>
+        <name>jml_tercatat</name>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -683,7 +600,7 @@
       <schema_name/>
     </partitioning>
     <connection>mysql_local</connection>
-    <sql>SELECT * from rpt_lb_form00
+    <sql>SELECT * from rpt_lb_form08
 WHERE dt_data = '${DATE_FINAL}';</sql>
     <limit>0</limit>
     <lookup/>

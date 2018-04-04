@@ -14,7 +14,7 @@ folder :
 
 **1.export_slik**
 
-Berisikan program untuk export slik dari tabel ke csv
+Berisikan program untuk export laporan slik dari tabel ke csv
 
 running :
 	
@@ -32,7 +32,21 @@ running :
 
 **2.export_lb**
 
-Under development
+Berisikan program untuk export laporan bulanan dari tabel ke mdb (ms.access)
+
+running :
+	
+	windows :
+		
+		run_export_lb.bat 				--> menjalankan untuk bulan kemarin
+		
+		run_export_lb.bat 2017-12-31	--> menjalankan untuk spesifik tanggal 2017-12-31
+	
+	linux :
+		
+		./run_export_lb.sh 				--> menjalankan untuk bulan kemarin
+		
+		./run_export_lb.sh 2017-12-31	--> menjalankan untuk spesifik tanggal 2017-12-31
 
 **3.db**
 

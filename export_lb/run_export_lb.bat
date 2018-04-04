@@ -1,13 +1,13 @@
 @echo off
 CLS
-TITLE "run_export_slik"
+TITLE "run_export_lb"
 
 SETLOCAL ENABLEDELAYEDEXPANSION
 
 REM INIT
 
 SET "PENTAHO_PATH=C:\12023227\Tools\Program\pdi-ce-8.0.0.0-28\data-integration"
-SET "LOG_PATH=C:\12023227\Tools\Program\3R\PROGRAM\pdi\export_slik\logs"
+SET "LOG_PATH=C:\12023227\Tools\Program\3R\PROGRAM\pdi\export_lb\logs"
 
 SET "full_wmic=C:\Windows\System32\wbem\WMIC.EXE"
 
@@ -39,6 +39,6 @@ FOR /F "skip=1 tokens=1-6" %%G IN ('WMIC Path Win32_LocalTime Get Day^,Hour^,Min
 SET tgl=%_yyyy%%_mm%%_dd%
 SET tglJam=%_yyyy%-%_mm%-%_dd% %_hour%:%_minute%:%_second%
 
-DEL %LOG_PATH%\export_slik_%tgl%.log
+DEL %LOG_PATH%\export_lb_%tgl%.log
 
-%PENTAHO_PATH%\kitchen.bat /file=main_export_slik.kjb /logfile=%LOG_PATH%\export_slik_%tgl%.log /level=Detailed "/param:date_input=%1"
+%PENTAHO_PATH%\kitchen.bat /file=main_export_lb.kjb /logfile=%LOG_PATH%\export_lb_%tgl%.log /level=Detailed "/param:date_input=%1"

@@ -478,8 +478,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
-      <yloc>160</yloc>
+      <xloc>800</xloc>
+      <yloc>192</yloc>
     </entry>
     <entry>
       <name>Success</name>
@@ -488,26 +488,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>704</xloc>
-      <yloc>96</yloc>
-    </entry>
-    <entry>
-      <name>Delete files</name>
-      <description/>
-      <type>DELETE_FILES</type>
-      <arg_from_previous>N</arg_from_previous>
-      <include_subfolders>N</include_subfolders>
-      <fields>
-        <field>
-          <name>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}</name>
-          <filemask>*</filemask>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>448</xloc>
-      <yloc>176</yloc>
+      <xloc>912</xloc>
+      <yloc>112</yloc>
     </entry>
     <entry>
       <name>Create a folder</name>
@@ -520,6 +502,81 @@
       <nr>0</nr>
       <xloc>496</xloc>
       <yloc>80</yloc>
+    </entry>
+    <entry>
+      <name>SQL</name>
+      <description/>
+      <type>SQL</type>
+      <sql>TRUNCATE TABLE tmp_count_lb;
+
+INSERT INTO tmp_count_lb(kd_form,nm_table,rec_count)
+SELECT 'rpt_lb_form00' as kd_form,'form00' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form00 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form01' as kd_form,'form01' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form01 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form02' as kd_form,'form02' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form02 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form03' as kd_form,'form03' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form03 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form04' as kd_form,'form04' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form04 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form05' as kd_form,'form05' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form05 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form06' as kd_form,'form06' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form06 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form07' as kd_form,'form07' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form07 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form08' as kd_form,'form08' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form08 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form09' as kd_form,'form09' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form09 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form10' as kd_form,'form10' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form10 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form11' as kd_form,'form11' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form11 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form12' as kd_form,'form12' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form12 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form13' as kd_form,'form13' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form13 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form14' as kd_form,'form14' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form14 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form15' as kd_form,'form15' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form15 WHERE dt_data = '${DATE_FINAL}'
+UNION ALL
+SELECT 'rpt_lb_form16' as kd_form,'form16' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form16 WHERE dt_data = '${DATE_FINAL}';</sql>
+      <useVariableSubstitution>T</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>mysql_local</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>608</xloc>
+      <yloc>192</yloc>
+    </entry>
+    <entry>
+      <name>Shell</name>
+      <description/>
+      <type>SHELL</type>
+      <filename>${Internal.Entry.Current.Directory}/MyMDB/${RUN_MYMDB}</filename>
+      <work_directory>${Internal.Entry.Current.Directory}/MyMDB</work_directory>
+      <arg_from_previous>N</arg_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <set_append_logfile>N</set_append_logfile>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <insertScript>N</insertScript>
+      <script/>
+      <loglevel>Basic</loglevel>
+      <argument0>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_LBBPR.mdb</argument0>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>704</xloc>
+      <yloc>96</yloc>
     </entry>
   </entries>
   <hops>
@@ -542,6 +599,15 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
+      <from>Create a folder</from>
+      <to>SQL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
       <from>export_form</from>
       <to>Success</to>
       <from_nr>0</from_nr>
@@ -551,8 +617,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>set_variable_2</from>
-      <to>Delete files</to>
+      <from>SQL</from>
+      <to>Shell</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -560,17 +626,17 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Delete files</from>
-      <to>Create a folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Create a folder</from>
+      <from>Shell</from>
       <to>export_form</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>set_variable_2</from>
+      <to>Create a folder</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

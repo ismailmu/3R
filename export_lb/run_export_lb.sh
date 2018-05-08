@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PENTAHO_PATH=/home/user1/program/data-integration
-LOG_PATH=/home/user1/program/export_lb/logs
+LOG_PATH=/home/user1/program/reporting/export_lb/logs
 TGL=$(date +"%Y%m%d")
 
 rm -f $LOG_PATH/export_lb_$TGL.log

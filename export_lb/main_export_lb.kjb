@@ -80,6 +80,61 @@
       </attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>sqlserver</name>
+    <server>localhost</server>
+    <type>MSSQL</type>
+    <access>Native</access>
+    <database>lbbpr</database>
+    <port>1433</port>
+    <username>sa</username>
+    <password>Encrypted 2be98afc86aa7f2b48b0abd678e80ab94</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <slaveservers>
     </slaveservers>
   <job-log-table>
@@ -372,8 +427,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>96</xloc>
-      <yloc>64</yloc>
+      <xloc>112</xloc>
+      <yloc>144</yloc>
     </entry>
     <entry>
       <name>set_variable</name>
@@ -448,6 +503,16 @@
       <yloc>144</yloc>
     </entry>
     <entry>
+      <name>Success</name>
+      <description/>
+      <type>SUCCESS</type>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>576</xloc>
+      <yloc>48</yloc>
+    </entry>
+    <entry>
       <name>export_form</name>
       <description/>
       <type>JOB</type>
@@ -478,72 +543,15 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>800</xloc>
-      <yloc>192</yloc>
+      <xloc>464</xloc>
+      <yloc>160</yloc>
     </entry>
     <entry>
-      <name>Success</name>
-      <description/>
-      <type>SUCCESS</type>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>912</xloc>
-      <yloc>112</yloc>
-    </entry>
-    <entry>
-      <name>Create a folder</name>
-      <description/>
-      <type>CREATE_FOLDER</type>
-      <foldername>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}</foldername>
-      <fail_of_folder_exists>N</fail_of_folder_exists>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>496</xloc>
-      <yloc>80</yloc>
-    </entry>
-    <entry>
-      <name>SQL</name>
+      <name>truncate tmp_data_lb</name>
       <description/>
       <type>SQL</type>
-      <sql>TRUNCATE TABLE tmp_count_lb;
-
-INSERT INTO tmp_count_lb(kd_form,nm_table,rec_count)
-SELECT 'rpt_lb_form00' as kd_form,'form00' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form00 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form01' as kd_form,'form01' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form01 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form02' as kd_form,'form02' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form02 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form03' as kd_form,'form03' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form03 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form04' as kd_form,'form04' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form04 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form05' as kd_form,'form05' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form05 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form06' as kd_form,'form06' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form06 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form07' as kd_form,'form07' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form07 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form08' as kd_form,'form08' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form08 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form09' as kd_form,'form09' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form09 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form10' as kd_form,'form10' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form10 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form11' as kd_form,'form11' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form11 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form12' as kd_form,'form12' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form12 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form13' as kd_form,'form13' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form13 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form14' as kd_form,'form14' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form14 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form15' as kd_form,'form15' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form15 WHERE dt_data = '${DATE_FINAL}'
-UNION ALL
-SELECT 'rpt_lb_form16' as kd_form,'form16' as nm_table,COUNT(1) as rec_count FROM rpt_lb_form16 WHERE dt_data = '${DATE_FINAL}';</sql>
-      <useVariableSubstitution>T</useVariableSubstitution>
+      <sql>TRUNCATE TABLE tmp_data_lb;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
@@ -551,32 +559,8 @@ SELECT 'rpt_lb_form16' as kd_form,'form16' as nm_table,COUNT(1) as rec_count FRO
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
-      <yloc>192</yloc>
-    </entry>
-    <entry>
-      <name>Shell</name>
-      <description/>
-      <type>SHELL</type>
-      <filename>${Internal.Entry.Current.Directory}/MyMDB/${RUN_MYMDB}</filename>
-      <work_directory>${Internal.Entry.Current.Directory}/MyMDB</work_directory>
-      <arg_from_previous>N</arg_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <set_append_logfile>N</set_append_logfile>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <insertScript>N</insertScript>
-      <script/>
-      <loglevel>Basic</loglevel>
-      <argument0>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_LBBPR.mdb</argument0>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>704</xloc>
-      <yloc>96</yloc>
+      <xloc>416</xloc>
+      <yloc>64</yloc>
     </entry>
   </entries>
   <hops>
@@ -599,15 +583,6 @@ SELECT 'rpt_lb_form16' as kd_form,'form16' as nm_table,COUNT(1) as rec_count FRO
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Create a folder</from>
-      <to>SQL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>export_form</from>
       <to>Success</to>
       <from_nr>0</from_nr>
@@ -617,26 +592,17 @@ SELECT 'rpt_lb_form16' as kd_form,'form16' as nm_table,COUNT(1) as rec_count FRO
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>SQL</from>
-      <to>Shell</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Shell</from>
-      <to>export_form</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>set_variable_2</from>
-      <to>Create a folder</to>
+      <to>truncate tmp_data_lb</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>truncate tmp_data_lb</from>
+      <to>export_form</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

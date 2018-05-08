@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>export_form08</name>
+    <name>get_data_valas_sb</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -499,6 +499,61 @@
       </attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>sqlserver</name>
+    <server>localhost</server>
+    <type>MSSQL</type>
+    <access>Native</access>
+    <database>lbbpr</database>
+    <port>1433</port>
+    <username>sa</username>
+    <password>Encrypted 2be98afc86aa7f2b48b0abd678e80ab94</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
     <hop>
       <from>Table input</from>
@@ -507,42 +562,20 @@
     </hop>
     <hop>
       <from>Select values</from>
-      <to>Microsoft Access Output</to>
+      <to>Table output</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2</from>
+      <to>Table output 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input 2</from>
+      <to>Select values 2</to>
       <enabled>Y</enabled>
     </hop>
   </order>
-  <step>
-    <name>Microsoft Access Output</name>
-    <type>AccessOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_LBBPR.mdb</filename>
-    <table>form_08</table>
-    <truncate>Y</truncate>
-    <create_file>Y</create_file>
-    <create_table>Y</create_table>
-    <commit_size>5000</commit_size>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <do_not_open_newfile_init>N</do_not_open_newfile_init>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
@@ -556,22 +589,13 @@
     </partitioning>
     <fields>
       <field>
-        <name>kd_jenis</name>
+        <name>LAPORAN_ID</name>
       </field>
       <field>
-        <name>kd_sumber_perolehan</name>
+        <name>LAP_ID</name>
       </field>
       <field>
-        <name>jml_biaya_perolehan</name>
-      </field>
-      <field>
-        <name>jml_amortisasi</name>
-      </field>
-      <field>
-        <name>jml_kerugian</name>
-      </field>
-      <field>
-        <name>jml_tercatat</name>
+        <name>JNS_TABLE</name>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -583,8 +607,44 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>176</yloc>
+      <xloc>224</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>LAPORAN_ID</name>
+      </field>
+      <field>
+        <name>LAP_ID</name>
+      </field>
+      <field>
+        <name>JNS_TABLE</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -599,9 +659,11 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>mysql_local</connection>
-    <sql>SELECT * from rpt_lb_form08
-WHERE dt_data = '${DATE_FINAL}';</sql>
+    <connection>sqlserver</connection>
+    <sql>SELECT LAPORAN_ID,LAP_VALAS_ID AS LAP_ID,'VALAS' AS JNS_TABLE
+FROM dbo.LAPORAN_VALAS
+WHERE LAPORAN_ID LIKE '%${PERIODE}00055'
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -615,8 +677,151 @@ WHERE dt_data = '${DATE_FINAL}';</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
+      <xloc>80</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table input 2</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>sqlserver</connection>
+    <sql>SELECT LAPORAN_ID,LAP_SB_ID AS LAP_ID,'SURAT_BERHARGA' AS JNS_TABLE
+FROM dbo.LAPORAN_SURATBERHARGA
+WHERE LAPORAN_ID LIKE '%${PERIODE}00056'</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>80</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>mysql_local</connection>
+    <schema/>
+    <table>tmp_data_lb</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>LAPORAN_ID</column_name>
+        <stream_name>LAPORAN_ID</stream_name>
+      </field>
+      <field>
+        <column_name>LAP_ID</column_name>
+        <stream_name>LAP_ID</stream_name>
+      </field>
+      <field>
+        <column_name>JNS_TABLE</column_name>
+        <stream_name>JNS_TABLE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
       <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table output 2</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>mysql_local</connection>
+    <schema/>
+    <table>tmp_data_lb</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>LAPORAN_ID</column_name>
+        <stream_name>LAPORAN_ID</stream_name>
+      </field>
+      <field>
+        <column_name>LAP_ID</column_name>
+        <stream_name>LAP_ID</stream_name>
+      </field>
+      <field>
+        <column_name>JNS_TABLE</column_name>
+        <stream_name>JNS_TABLE</stream_name>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

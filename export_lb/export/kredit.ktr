@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>export_form04</name>
+    <name>kredit</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -499,55 +499,78 @@
       </attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>sqlserver</name>
+    <server>localhost</server>
+    <type>MSSQL</type>
+    <access>Native</access>
+    <database>lbbpr</database>
+    <port>1433</port>
+    <username>sa</username>
+    <password>Encrypted 2be98afc86aa7f2b48b0abd678e80ab94</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
+    <hop>
+      <from>Select values</from>
+      <to>Table output</to>
+      <enabled>Y</enabled>
+    </hop>
     <hop>
       <from>Table input</from>
       <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
-    <hop>
-      <from>Select values</from>
-      <to>Microsoft Access Output</to>
-      <enabled>Y</enabled>
-    </hop>
   </order>
-  <step>
-    <name>Microsoft Access Output</name>
-    <type>AccessOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_LBBPR.mdb</filename>
-    <table>form_04</table>
-    <truncate>Y</truncate>
-    <create_file>Y</create_file>
-    <create_table>Y</create_table>
-    <commit_size>5000</commit_size>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <do_not_open_newfile_init>N</do_not_open_newfile_init>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -556,43 +579,154 @@
     </partitioning>
     <fields>
       <field>
-        <name>kd_sbi</name>
+        <name>dt_populate</name>
       </field>
       <field>
-        <name>kd_klasifikasi</name>
+        <name>src_system</name>
+      </field>
+      <field>
+        <name>user_generate</name>
+      </field>
+      <field>
+        <name>dt_data</name>
+      </field>
+      <field>
+        <name>laporan_id</name>
+      </field>
+      <field>
+        <name>lap_kredit_id</name>
+      </field>
+      <field>
+        <name>nomor_akad</name>
+      </field>
+      <field>
+        <name>jumlah_rekening</name>
+      </field>
+      <field>
+        <name>sifat</name>
+      </field>
+      <field>
+        <name>jenis_penggunaan</name>
+      </field>
+      <field>
+        <name>keterkaitan</name>
+      </field>
+      <field>
+        <name>sumber_dana</name>
+      </field>
+      <field>
+        <name>periode_bayar</name>
+      </field>
+      <field>
+        <name>jw_mulai</name>
+      </field>
+      <field>
+        <name>jw_selesai</name>
+      </field>
+      <field>
+        <name>angsuran_pertama</name>
+      </field>
+      <field>
+        <name>kualitas</name>
+      </field>
+      <field>
+        <name>lama_tunggakan</name>
+      </field>
+      <field>
+        <name>gol_debitur</name>
+      </field>
+      <field>
+        <name>sandi_bank</name>
+      </field>
+      <field>
+        <name>sektor_ekonomi</name>
+      </field>
+      <field>
+        <name>jenis_usaha</name>
+      </field>
+      <field>
+        <name>lokasi_debitur</name>
       </field>
       <field>
         <name>suku_bunga</name>
       </field>
       <field>
-        <name>dt_mulai</name>
+        <name>suku_bunga_cara</name>
       </field>
       <field>
-        <name>dt_jatuh_tempo</name>
+        <name>penjamin_gol</name>
       </field>
       <field>
-        <name>jml</name>
+        <name>penjamin_bag_jamin</name>
       </field>
       <field>
-        <name>jml_dijaminkan</name>
+        <name>agun_liq_jenis</name>
       </field>
       <field>
-        <name>biaya_perolehan</name>
+        <name>agun_liq_nilai</name>
       </field>
       <field>
-        <name>diskonto_belum_amortisasi</name>
+        <name>agun_non_jenis</name>
       </field>
       <field>
-        <name>premium_belum_amortisasi</name>
+        <name>agun_non_nilai</name>
       </field>
       <field>
-        <name>biaya_belum_amortisasi</name>
+        <name>agun_tgl_nilai</name>
       </field>
       <field>
-        <name>laba_rugi_belum_realisasi</name>
+        <name>longgar_tarik</name>
       </field>
       <field>
-        <name>biaya_sudah_amortisasi</name>
+        <name>plafon_akad</name>
+      </field>
+      <field>
+        <name>plafon_efektif</name>
+      </field>
+      <field>
+        <name>baki_debet</name>
+      </field>
+      <field>
+        <name>provisi</name>
+      </field>
+      <field>
+        <name>biaya_transaksi</name>
+      </field>
+      <field>
+        <name>pendapatan_bunga_tgh</name>
+      </field>
+      <field>
+        <name>kerugian_restruktur</name>
+      </field>
+      <field>
+        <name>baki_debet_neto</name>
+      </field>
+      <field>
+        <name>ppap_dibentuk</name>
+      </field>
+      <field>
+        <name>pendapatan_bunga</name>
+      </field>
+      <field>
+        <name>periode_bayar_bunga</name>
+      </field>
+      <field>
+        <name>lama_tunggakan_bunga</name>
+      </field>
+      <field>
+        <name>agun_non_nilai_ppap</name>
+      </field>
+      <field>
+        <name>ppap_kelebihan</name>
+      </field>
+      <field>
+        <name>laporan_id_1</name>
+      </field>
+      <field>
+        <name>JNS_TABLE</name>
+      </field>
+      <field>
+        <name>lap_id</name>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -604,8 +738,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>176</yloc>
+      <xloc>192</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -621,8 +755,11 @@
       <schema_name/>
     </partitioning>
     <connection>mysql_local</connection>
-    <sql>SELECT * from rpt_lb_form04
-WHERE dt_data = '${DATE_FINAL}';</sql>
+    <sql>SELECT *
+from rpt_lb_kredit a
+LEFT JOIN tmp_data_lb b ON a.laporan_id = b.laporan_id AND a.lap_kredit_id = b.lap_id AND b.jns_table = 'KREDIT'
+WHERE dt_data = '${DATE_FINAL}'
+AND b.lap_id IS NULL</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -636,8 +773,223 @@ WHERE dt_data = '${DATE_FINAL}';</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
-      <yloc>128</yloc>
+      <xloc>80</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>sqlserver</connection>
+    <schema/>
+    <table>LAPORAN_KREDIT</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>LAPORAN_ID</column_name>
+        <stream_name>laporan_id</stream_name>
+      </field>
+      <field>
+        <column_name>LAP_KREDIT_ID</column_name>
+        <stream_name>lap_kredit_id</stream_name>
+      </field>
+      <field>
+        <column_name>NOMOR_AKAD</column_name>
+        <stream_name>nomor_akad</stream_name>
+      </field>
+      <field>
+        <column_name>JUMLAH_REKENING</column_name>
+        <stream_name>jumlah_rekening</stream_name>
+      </field>
+      <field>
+        <column_name>SIFAT</column_name>
+        <stream_name>sifat</stream_name>
+      </field>
+      <field>
+        <column_name>JENIS_PENGGUNAAN</column_name>
+        <stream_name>jenis_penggunaan</stream_name>
+      </field>
+      <field>
+        <column_name>KETERKAITAN</column_name>
+        <stream_name>keterkaitan</stream_name>
+      </field>
+      <field>
+        <column_name>SUMBER_DANA</column_name>
+        <stream_name>sumber_dana</stream_name>
+      </field>
+      <field>
+        <column_name>PERIODE_BAYAR</column_name>
+        <stream_name>periode_bayar</stream_name>
+      </field>
+      <field>
+        <column_name>JW_MULAI</column_name>
+        <stream_name>jw_mulai</stream_name>
+      </field>
+      <field>
+        <column_name>JW_SELESAI</column_name>
+        <stream_name>jw_selesai</stream_name>
+      </field>
+      <field>
+        <column_name>ANGSURAN_PERTAMA</column_name>
+        <stream_name>angsuran_pertama</stream_name>
+      </field>
+      <field>
+        <column_name>KUALITAS</column_name>
+        <stream_name>kualitas</stream_name>
+      </field>
+      <field>
+        <column_name>LAMA_TUNGGAKAN</column_name>
+        <stream_name>lama_tunggakan</stream_name>
+      </field>
+      <field>
+        <column_name>GOL_DEBITUR</column_name>
+        <stream_name>gol_debitur</stream_name>
+      </field>
+      <field>
+        <column_name>SANDI_BANK</column_name>
+        <stream_name>sandi_bank</stream_name>
+      </field>
+      <field>
+        <column_name>SEKTOR_EKONOMI</column_name>
+        <stream_name>sektor_ekonomi</stream_name>
+      </field>
+      <field>
+        <column_name>JENIS_USAHA</column_name>
+        <stream_name>jenis_usaha</stream_name>
+      </field>
+      <field>
+        <column_name>LOKASI_DEBITUR</column_name>
+        <stream_name>lokasi_debitur</stream_name>
+      </field>
+      <field>
+        <column_name>SUKU_BUNGA</column_name>
+        <stream_name>suku_bunga</stream_name>
+      </field>
+      <field>
+        <column_name>SUKU_BUNGA_CARA</column_name>
+        <stream_name>suku_bunga_cara</stream_name>
+      </field>
+      <field>
+        <column_name>PENJAMIN_GOL</column_name>
+        <stream_name>penjamin_gol</stream_name>
+      </field>
+      <field>
+        <column_name>PENJAMIN_BAG_JAMIN</column_name>
+        <stream_name>penjamin_bag_jamin</stream_name>
+      </field>
+      <field>
+        <column_name>AGUN_LIQ_JENIS</column_name>
+        <stream_name>agun_liq_jenis</stream_name>
+      </field>
+      <field>
+        <column_name>AGUN_LIQ_NILAI</column_name>
+        <stream_name>agun_liq_nilai</stream_name>
+      </field>
+      <field>
+        <column_name>AGUN_NON_JENIS</column_name>
+        <stream_name>agun_non_jenis</stream_name>
+      </field>
+      <field>
+        <column_name>AGUN_NON_NILAI</column_name>
+        <stream_name>agun_non_nilai</stream_name>
+      </field>
+      <field>
+        <column_name>AGUN_TGL_NILAI</column_name>
+        <stream_name>agun_tgl_nilai</stream_name>
+      </field>
+      <field>
+        <column_name>LONGGAR_TARIK</column_name>
+        <stream_name>longgar_tarik</stream_name>
+      </field>
+      <field>
+        <column_name>PLAFON_AKAD</column_name>
+        <stream_name>plafon_akad</stream_name>
+      </field>
+      <field>
+        <column_name>PLAFON_EFEKTIF</column_name>
+        <stream_name>plafon_efektif</stream_name>
+      </field>
+      <field>
+        <column_name>BAKI_DEBET</column_name>
+        <stream_name>baki_debet</stream_name>
+      </field>
+      <field>
+        <column_name>PROVISI</column_name>
+        <stream_name>provisi</stream_name>
+      </field>
+      <field>
+        <column_name>BIAYA_TRANSAKSI</column_name>
+        <stream_name>biaya_transaksi</stream_name>
+      </field>
+      <field>
+        <column_name>PENDAPATAN_BUNGA_TGH</column_name>
+        <stream_name>pendapatan_bunga_tgh</stream_name>
+      </field>
+      <field>
+        <column_name>KERUGIAN_RESTRUKTUR</column_name>
+        <stream_name>kerugian_restruktur</stream_name>
+      </field>
+      <field>
+        <column_name>BAKI_DEBET_NETO</column_name>
+        <stream_name>baki_debet_neto</stream_name>
+      </field>
+      <field>
+        <column_name>PPAP_DIBENTUK</column_name>
+        <stream_name>ppap_dibentuk</stream_name>
+      </field>
+      <field>
+        <column_name>PENDAPATAN_BUNGA</column_name>
+        <stream_name>pendapatan_bunga</stream_name>
+      </field>
+      <field>
+        <column_name>PERIODE_BAYAR_BUNGA</column_name>
+        <stream_name>periode_bayar_bunga</stream_name>
+      </field>
+      <field>
+        <column_name>LAMA_TUNGGAKAN_BUNGA</column_name>
+        <stream_name>lama_tunggakan_bunga</stream_name>
+      </field>
+      <field>
+        <column_name>AGUN_NON_NILAI_PPAP</column_name>
+        <stream_name>agun_non_nilai_ppap</stream_name>
+      </field>
+      <field>
+        <column_name>PPAP_KELEBIHAN</column_name>
+        <stream_name>ppap_kelebihan</stream_name>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>export_form14</name>
+    <name>pinjaman</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -499,55 +499,78 @@
       </attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>sqlserver</name>
+    <server>localhost</server>
+    <type>MSSQL</type>
+    <access>Native</access>
+    <database>lbbpr</database>
+    <port>1433</port>
+    <username>sa</username>
+    <password>Encrypted 2be98afc86aa7f2b48b0abd678e80ab94</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
+    <hop>
+      <from>Select values</from>
+      <to>Table output</to>
+      <enabled>Y</enabled>
+    </hop>
     <hop>
       <from>Table input</from>
       <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
-    <hop>
-      <from>Select values</from>
-      <to>Microsoft Access Output</to>
-      <enabled>Y</enabled>
-    </hop>
   </order>
-  <step>
-    <name>Microsoft Access Output</name>
-    <type>AccessOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_LBBPR.mdb</filename>
-    <table>form_14</table>
-    <truncate>Y</truncate>
-    <create_file>Y</create_file>
-    <create_table>Y</create_table>
-    <commit_size>5000</commit_size>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <do_not_open_newfile_init>N</do_not_open_newfile_init>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -556,40 +579,76 @@
     </partitioning>
     <fields>
       <field>
-        <name>kd_jenis_bank</name>
+        <name>dt_populate</name>
       </field>
       <field>
-        <name>kd_sbi</name>
+        <name>src_system</name>
       </field>
       <field>
-        <name>kd_dati</name>
+        <name>user_generate</name>
       </field>
       <field>
-        <name>kd_jenis</name>
+        <name>dt_data</name>
       </field>
       <field>
-        <name>kd_terkait</name>
+        <name>laporan_id</name>
       </field>
       <field>
-        <name>dt_mulai</name>
+        <name>lap_pin_id</name>
       </field>
       <field>
-        <name>dt_jatuh_tempo</name>
+        <name>jml_rek</name>
+      </field>
+      <field>
+        <name>gol_kreditur</name>
+      </field>
+      <field>
+        <name>sandi_bank</name>
+      </field>
+      <field>
+        <name>lokasi_kreditur</name>
+      </field>
+      <field>
+        <name>jenis</name>
+      </field>
+      <field>
+        <name>keterkaitan</name>
+      </field>
+      <field>
+        <name>jw_mulai</name>
+      </field>
+      <field>
+        <name>jw_selesai</name>
       </field>
       <field>
         <name>suku_bunga</name>
       </field>
       <field>
-        <name>jml_deposito</name>
+        <name>suku_bunga_cara</name>
       </field>
       <field>
-        <name>jml_dijaminkan</name>
+        <name>plafon</name>
       </field>
       <field>
-        <name>jml_belum_amortisasi</name>
+        <name>saldo</name>
       </field>
       <field>
-        <name>jml_final</name>
+        <name>biaya_transaksi</name>
+      </field>
+      <field>
+        <name>diskonto</name>
+      </field>
+      <field>
+        <name>saldo_net</name>
+      </field>
+      <field>
+        <name>laporan_id_1</name>
+      </field>
+      <field>
+        <name>JNS_TABLE</name>
+      </field>
+      <field>
+        <name>lap_id</name>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -601,8 +660,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>176</yloc>
+      <xloc>192</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -618,8 +677,11 @@
       <schema_name/>
     </partitioning>
     <connection>mysql_local</connection>
-    <sql>SELECT * from rpt_lb_form14
-WHERE dt_data = '${DATE_FINAL}';</sql>
+    <sql>SELECT *
+from rpt_lb_pinjaman a
+LEFT JOIN tmp_data_lb b ON a.laporan_id = b.laporan_id AND a.lap_pin_id = b.lap_id AND b.jns_table = 'PINJAMAN'
+WHERE dt_data = '${DATE_FINAL}'
+AND b.lap_id IS NULL</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -633,8 +695,119 @@ WHERE dt_data = '${DATE_FINAL}';</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
-      <yloc>128</yloc>
+      <xloc>80</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>sqlserver</connection>
+    <schema/>
+    <table>LAPORAN_PINJAMAN</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>LAPORAN_ID</column_name>
+        <stream_name>laporan_id</stream_name>
+      </field>
+      <field>
+        <column_name>LAP_PIN_ID</column_name>
+        <stream_name>lap_pin_id</stream_name>
+      </field>
+      <field>
+        <column_name>JML_REK</column_name>
+        <stream_name>jml_rek</stream_name>
+      </field>
+      <field>
+        <column_name>GOL_KREDITUR</column_name>
+        <stream_name>gol_kreditur</stream_name>
+      </field>
+      <field>
+        <column_name>SANDI_BANK</column_name>
+        <stream_name>sandi_bank</stream_name>
+      </field>
+      <field>
+        <column_name>LOKASI_KREDITUR</column_name>
+        <stream_name>lokasi_kreditur</stream_name>
+      </field>
+      <field>
+        <column_name>JENIS</column_name>
+        <stream_name>jenis</stream_name>
+      </field>
+      <field>
+        <column_name>KETERKAITAN</column_name>
+        <stream_name>keterkaitan</stream_name>
+      </field>
+      <field>
+        <column_name>JW_MULAI</column_name>
+        <stream_name>jw_mulai</stream_name>
+      </field>
+      <field>
+        <column_name>JW_SELESAI</column_name>
+        <stream_name>jw_selesai</stream_name>
+      </field>
+      <field>
+        <column_name>SUKU_BUNGA</column_name>
+        <stream_name>suku_bunga</stream_name>
+      </field>
+      <field>
+        <column_name>SUKU_BUNGA_CARA</column_name>
+        <stream_name>suku_bunga_cara</stream_name>
+      </field>
+      <field>
+        <column_name>PLAFON</column_name>
+        <stream_name>plafon</stream_name>
+      </field>
+      <field>
+        <column_name>SALDO</column_name>
+        <stream_name>saldo</stream_name>
+      </field>
+      <field>
+        <column_name>BIAYA_TRANSAKSI</column_name>
+        <stream_name>biaya_transaksi</stream_name>
+      </field>
+      <field>
+        <column_name>DISKONTO</column_name>
+        <stream_name>diskonto</stream_name>
+      </field>
+      <field>
+        <column_name>SALDO_NET</column_name>
+        <stream_name>saldo_net</stream_name>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

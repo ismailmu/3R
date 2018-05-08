@@ -9,6 +9,8 @@ Prerequisite :
 
 3.mysql 5.7
 
+4.sql server 2014
+
 
 folder :
 
@@ -32,7 +34,7 @@ running :
 
 **2.export_lb**
 
-Berisikan program untuk export laporan bulanan dari tabel ke mdb (ms.access)
+Berisikan program untuk export laporan bulanan dari tabel mysql ke sql server
 
 running :
 	

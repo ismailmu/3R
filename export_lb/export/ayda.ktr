@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>export_form00</name>
+    <name>ayda</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -498,50 +499,73 @@
       </attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>sqlserver</name>
+    <server>localhost</server>
+    <type>MSSQL</type>
+    <access>Native</access>
+    <database>lbbpr</database>
+    <port>1433</port>
+    <username>sa</username>
+    <password>Encrypted 2be98afc86aa7f2b48b0abd678e80ab94</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
+    <hop>
+      <from>Select values</from>
+      <to>Table output</to>
+      <enabled>Y</enabled>
+    </hop>
     <hop>
       <from>Table input</from>
       <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
-    <hop>
-      <from>Select values</from>
-      <to>Microsoft Access Output</to>
-      <enabled>Y</enabled>
-    </hop>
   </order>
-  <step>
-    <name>Microsoft Access Output</name>
-    <type>AccessOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <filename>${EXPORT_TO}/${TAHUN_FINAL}${BULAN_FINAL}/${KD_JNS_PELAPOR}.${KD_PELAPOR}.${TAHUN_FINAL}.${BULAN_FINAL}_LBBPR.mdb</filename>
-    <table>form_00</table>
-    <truncate>Y</truncate>
-    <create_file>Y</create_file>
-    <create_table>Y</create_table>
-    <commit_size>5000</commit_size>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <do_not_open_newfile_init>N</do_not_open_newfile_init>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
@@ -555,140 +579,49 @@
     </partitioning>
     <fields>
       <field>
-        <name>sandi_bank</name>
-        <rename/>
+        <name>dt_populate</name>
       </field>
       <field>
-        <name>nm_bank</name>
-        <rename/>
+        <name>src_system</name>
       </field>
       <field>
-        <name>ket_alamat</name>
-        <rename/>
+        <name>user_generate</name>
       </field>
       <field>
-        <name>ket_kecamatan</name>
-        <rename/>
+        <name>dt_data</name>
       </field>
       <field>
-        <name>ket_kelurahan</name>
-        <rename/>
+        <name>laporan_id</name>
       </field>
       <field>
-        <name>kd_dati</name>
-        <rename/>
+        <name>lap_ayda_id</name>
       </field>
       <field>
-        <name>no_kodepos</name>
-        <rename/>
+        <name>jenis_agunan</name>
       </field>
       <field>
-        <name>status_pemilikan_gdg</name>
-        <rename/>
+        <name>jw_mulai</name>
       </field>
       <field>
-        <name>kd_cabang</name>
-        <rename/>
+        <name>jw_selesai</name>
       </field>
       <field>
-        <name>kd_cabang_wil</name>
-        <rename/>
+        <name>nilai</name>
       </field>
       <field>
-        <name>kepemilikan</name>
-        <rename/>
+        <name>akum_rugi</name>
       </field>
       <field>
-        <name>jml_pemegang_saham</name>
-        <rename/>
+        <name>nilai_wajar</name>
       </field>
       <field>
-        <name>nm_direktur</name>
-        <rename/>
+        <name>laporan_id_1</name>
       </field>
       <field>
-        <name>jml_direktur</name>
-        <rename/>
+        <name>JNS_TABLE</name>
       </field>
       <field>
-        <name>nm_komisaris</name>
-        <rename/>
-      </field>
-      <field>
-        <name>jml_komisaris</name>
-        <rename/>
-      </field>
-      <field>
-        <name>pendidikan_komisaris</name>
-        <rename/>
-      </field>
-      <field>
-        <name>nm_pimpinan</name>
-        <rename/>
-      </field>
-      <field>
-        <name>jml_karyawan</name>
-        <rename/>
-      </field>
-      <field>
-        <name>no_telepon</name>
-        <rename/>
-      </field>
-      <field>
-        <name>no_fax</name>
-        <rename/>
-      </field>
-      <field>
-        <name>email</name>
-        <rename/>
-      </field>
-      <field>
-        <name>nm_penanggung</name>
-        <rename/>
-      </field>
-      <field>
-        <name>divisi_penanggung</name>
-        <rename/>
-      </field>
-      <field>
-        <name>no_telepon_penanggung</name>
-        <rename/>
-      </field>
-      <field>
-        <name>no_fax_penanggung</name>
-        <rename/>
-      </field>
-      <field>
-        <name>pva</name>
-        <rename/>
-      </field>
-      <field>
-        <name>jml_cabang</name>
-        <rename/>
-      </field>
-      <field>
-        <name>jml_kantor_kas</name>
-        <rename/>
-      </field>
-      <field>
-        <name>jml_kas_mobil</name>
-        <rename/>
-      </field>
-      <field>
-        <name>jml_atm</name>
-        <rename/>
-      </field>
-      <field>
-        <name>deviden_dibayar</name>
-        <rename/>
-      </field>
-      <field>
-        <name>bonus_tahunan</name>
-        <rename/>
-      </field>
-      <field>
-        <name>diaudit_kap</name>
-        <rename/>
+        <name>lap_id</name>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -700,8 +633,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>176</yloc>
+      <xloc>192</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -717,8 +650,11 @@
       <schema_name/>
     </partitioning>
     <connection>mysql_local</connection>
-    <sql>SELECT * from rpt_lb_form00
-WHERE dt_data = '${DATE_FINAL}';</sql>
+    <sql>SELECT *
+from rpt_lb_ayda a
+LEFT JOIN tmp_data_lb b ON a.laporan_id = b.laporan_id AND a.lap_ayda_id = b.lap_id AND b.jns_table = 'AYDA'
+WHERE dt_data = '${DATE_FINAL}'
+AND b.lap_id IS NULL</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -732,8 +668,83 @@ WHERE dt_data = '${DATE_FINAL}';</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
-      <yloc>128</yloc>
+      <xloc>80</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>sqlserver</connection>
+    <schema/>
+    <table>LAPORAN_AYDA</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>LAPORAN_ID</column_name>
+        <stream_name>laporan_id</stream_name>
+      </field>
+      <field>
+        <column_name>LAP_AYDA_ID</column_name>
+        <stream_name>lap_ayda_id</stream_name>
+      </field>
+      <field>
+        <column_name>JENIS_AGUNAN</column_name>
+        <stream_name>jenis_agunan</stream_name>
+      </field>
+      <field>
+        <column_name>JW_MULAI</column_name>
+        <stream_name>jw_mulai</stream_name>
+      </field>
+      <field>
+        <column_name>JW_SELESAI</column_name>
+        <stream_name>jw_selesai</stream_name>
+      </field>
+      <field>
+        <column_name>NILAI</column_name>
+        <stream_name>nilai</stream_name>
+      </field>
+      <field>
+        <column_name>AKUM_RUGI</column_name>
+        <stream_name>akum_rugi</stream_name>
+      </field>
+      <field>
+        <column_name>NILAI_WAJAR</column_name>
+        <stream_name>nilai_wajar</stream_name>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
